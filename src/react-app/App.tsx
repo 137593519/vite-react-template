@@ -1,65 +1,43 @@
 // src/App.tsx
 
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import cloudflareLogo from "./assets/Cloudflare_Logo.svg";
-import honoLogo from "./assets/hono.svg";
 import "./App.css";
 
 function App() {
-	const [count, setCount] = useState(0);
-	const [name, setName] = useState("unknown");
-
 	return (
-		<>
-			<div>
-				<a href="https://vite.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-				<a href="https://hono.dev/" target="_blank">
-					<img src={honoLogo} className="logo cloudflare" alt="Hono logo" />
-				</a>
-				<a href="https://workers.cloudflare.com/" target="_blank">
-					<img
-						src={cloudflareLogo}
-						className="logo cloudflare"
-						alt="Cloudflare logo"
-					/>
-				</a>
-			</div>
-			<h1>Vite + React + Hono + Cloudflare</h1>
-			<div className="card">
-				<button
-					onClick={() => setCount((count) => count + 1)}
-					aria-label="increment"
-				>
-					count is {count}
-				</button>
+		<div className="homepage">
+			<header className="hero">
+				<p className="eyebrow">筑梦博客</p>
+				<h1>欢迎来到筑梦博客</h1>
 				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
+					这里是我的官网首页，分享前端技术、产品思考与成长故事。
 				</p>
-			</div>
-			<div className="card">
-				<button
-					onClick={() => {
-						fetch("/api/")
-							.then((res) => res.json() as Promise<{ name: string }>)
-							.then((data) => setName(data.name));
-					}}
-					aria-label="get name"
-				>
-					Name from API is: {name}
-				</button>
+				<a className="cta" href="#latest">
+					查看最新文章
+				</a>
+			</header>
+
+			<section className="intro">
+				<h2>我们一起筑梦前行</h2>
 				<p>
-					Edit <code>worker/index.ts</code> to change the name
+					在这里，你会看到关于 React、Vite、Cloudflare Workers 以及个人成长的实战分享。
 				</p>
-			</div>
-			<p className="read-the-docs">Click on the logos to learn more</p>
-		</>
+			</section>
+
+			<section id="latest" className="cards">
+				<article className="card">
+					<h3>最新文章</h3>
+					<p>持续更新前端实战、性能优化与开发者工具的实用攻略。</p>
+				</article>
+				<article className="card">
+					<h3>关于我</h3>
+					<p>一个热爱技术、愿意用代码记录梦想的开发者。</p>
+				</article>
+				<article className="card">
+					<h3>联系我</h3>
+					<p>欢迎留言交流，共同打造更好的产品与体验。</p>
+				</article>
+			</section>
+		</div>
 	);
 }
 
