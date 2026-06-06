@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import type { Engine } from "@tsparticles/engine";
 import Particles from "@tsparticles/react";
+import { ParticlesProvider } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
 export default function Background() {
@@ -9,10 +10,10 @@ export default function Background() {
   }, []);
 
   return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={{
+    <ParticlesProvider init={particlesInit}>
+      <Particles
+        id="tsparticles"
+        options={{
         background: {
           color: {
             value: "transparent",
@@ -80,6 +81,7 @@ export default function Background() {
         },
         detectRetina: true,
       }}
-    />
+      />
+    </ParticlesProvider>
   );
 }
