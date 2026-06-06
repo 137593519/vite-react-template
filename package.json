@@ -12,6 +12,10 @@
 		"publish": true
 	},
 	"dependencies": {
+		"@tsparticles/engine": "^4.1.1",
+		"@tsparticles/react": "^4.1.1",
+		"@tsparticles/slim": "^4.1.1",
+		"framer-motion": "^12.40.0",
 		"hono": "4.11.1",
 		"react": "19.2.1",
 		"react-dom": "19.2.1"
